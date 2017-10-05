@@ -10,9 +10,11 @@ import { ServersComponent } from './servers/servers.component';
 import { UserComponent } from './users/user/user.component';
 import { ServersService } from './servers/servers.service';
 import { UsersComponent } from './users/users.component';
-import { HomeComponent } from './home/home.component';
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './auth-guard.service';
+import { AppComponent } from './app.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ServersService],
+  providers: [ServersService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
