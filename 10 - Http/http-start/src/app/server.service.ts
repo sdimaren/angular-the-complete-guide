@@ -10,4 +10,8 @@ export class ServerService {
 			servers, 
 			{headers: headers});
 	}
+
+	getServers() {
+		return this.http.get('https://ng-http-bdd46.firebaseio.com/data.json');
+	}
 }
