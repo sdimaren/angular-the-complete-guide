@@ -32,4 +32,13 @@ export class ServerService {
 					return Observable.throw('Something went wrong');
 				});
 	}
+
+	getAppName() {
+		return this.http.get('https://ng-http-bdd46.firebaseio.com/appName.json')
+			.map(
+				(response: Response) => {
+					return response.json();
+				}
+			);
+	}
 }
